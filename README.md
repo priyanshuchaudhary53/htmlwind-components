@@ -2,6 +2,8 @@
 
 Free, open-source Tailwind CSS UI components. Copy-paste ready.
 
+227 components across 23 categories — no login, no paywall.
+
 ## Browse online
 
 → [htmlwind.com](https://htmlwind.com)
