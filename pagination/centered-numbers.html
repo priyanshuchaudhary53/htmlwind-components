@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered numbers</title>
+    <link href="/assets/css/pagination/preview.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bg-white py-8">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!--@snippet-->
+        <nav class="flex border-t border-gray-200 pt-4 md:pt-5" aria-label="Pagination">
+          <div class="flex flex-1 items-center">
+            <a href="#" class="flex items-center gap-x-1.5 text-sm font-semibold text-gray-500 hover:text-gray-700">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Previous
+            </a>
+          </div>
+          <div class="hidden md:flex md:items-center md:gap-x-0.5">
+            <a href="#" aria-current="page" class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-pink-500 text-sm font-medium text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">1</a>
+            <a href="#" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">2</a>
+            <a href="#" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">3</a>
+            <span class="inline-flex h-10 w-10 items-center justify-center text-sm font-medium text-gray-500">...</span>
+            <a href="#" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">8</a>
+            <a href="#" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">9</a>
+            <a href="#" class="inline-flex h-10 w-10 items-center justify-center rounded-lg text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">10</a>
+          </div>
+          <div class="flex flex-1 items-center justify-end">
+            <a href="#" class="flex items-center gap-x-1.5 text-sm font-semibold text-gray-500 hover:text-gray-700">
+              Next
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </nav>
+        <!--@endsnippet-->
+      </div>
+    </div>
+  </body>
+</html>

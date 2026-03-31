@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Side-by-side on dark</title>
+    <link href="/assets/css/contacts/preview.css" rel="stylesheet" />
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const submitButton = document.querySelector("button");
+
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="bg-gray-900 py-24 sm:py-32">
+      <div class="px-6 lg:px-8">
+        <div class="mx-auto max-w-xl lg:max-w-2xl lg:text-center">
+          <h2 class="text-4xl font-semibold tracking-tight text-white sm:text-5xl">Let’s discuss your project</h2>
+          <p class="mt-2 text-lg leading-8 text-gray-300">We assist businesses and individuals in developing their brands.</p>
+        </div>
+        <div class="mx-auto mt-16 grid max-w-xl grid-cols-1 gap-16 sm:gap-y-20 lg:max-w-4xl lg:grid-cols-12 lg:gap-x-20">
+          <div class="space-y-12 lg:col-span-5">
+            <div class="">
+              <h3 class="text-xl font-medium tracking-tight text-white">Contact us</h3>
+              <p class="mt-2 text-base leading-7 text-gray-300">Talk to our helpful team.</p>
+              <div class="mt-4 flex flex-col items-start space-y-2">
+                <a href="#" class="inline-flex gap-2 text-base font-semibold text-white">
+                  <svg class="mt-0.5 h-5 w-5 text-pink-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M3 11C3 9.11438 3 8.17157 3.58579 7.58579C4.17157 7 5.11438 7 7 7H8H16H17C18.8856 7 19.8284 7 20.4142 7.58579C21 8.17157 21 9.11438 21 11V17C21 18.8856 21 19.8284 20.4142 20.4142C19.8284 21 18.8856 21 17 21H16H8H7C5.11438 21 4.17157 21 3.58579 20.4142C3 19.8284 3 18.8856 3 17V11Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                    <path d="M8 21V5C8 3.89543 8.89543 3 10 3H14C15.1046 3 16 3.89543 16 5V21" stroke="currentColor" stroke-width="2" stroke-linejoin="round"></path>
+                  </svg>
+                  sales@example.com
+                </a>
+                <a href="#" class="inline-flex gap-2 text-base font-semibold text-white">
+                  <svg class="mt-0.5 h-5 w-5 text-pink-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M20 19H18C16.8954 19 16 18.1046 16 17V15C16 13.8954 16.8954 13 18 13H20M20 19V13M20 19V19C20 20.6569 18.6569 22 17 22H11M4 13V17C4 18.1046 4.89543 19 6 19V19C7.10457 19 8 18.1046 8 17V15C8 13.8954 7.10457 13 6 13H4ZM4 13V10C4 5.58172 7.58172 2 12 2V2C16.4183 2 20 5.58172 20 10V13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                  support@example.com
+                </a>
+              </div>
+            </div>
+            <div class="">
+              <h3 class="text-xl font-medium tracking-tight text-white">Call us</h3>
+              <p class="mt-2 text-base leading-7 text-gray-300">Weekdays, 8am – 5pm.</p>
+              <a href="#" class="mt-4 inline-flex gap-2 text-base font-semibold text-white">
+                <svg class="mt-0.5 h-5 w-5 text-pink-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 5.5C3 14.0604 9.93959 21 18.5 21C18.8862 21 19.2691 20.9859 19.6483 20.9581C20.0834 20.9262 20.3009 20.9103 20.499 20.7963C20.663 20.7019 20.8185 20.5345 20.9007 20.364C21 20.1582 21 19.9181 21 19.438V16.6207C21 16.2169 21 16.015 20.9335 15.842C20.8749 15.6891 20.7795 15.553 20.6559 15.4456C20.516 15.324 20.3262 15.255 19.9468 15.117L16.74 13.9509C16.2985 13.7904 16.0777 13.7101 15.8683 13.7237C15.6836 13.7357 15.5059 13.7988 15.3549 13.9058C15.1837 14.0271 15.0629 14.2285 14.8212 14.6314L14 16C11.3501 14.7999 9.2019 12.6489 8 10L9.36863 9.17882C9.77145 8.93713 9.97286 8.81628 10.0942 8.64506C10.2012 8.49408 10.2643 8.31637 10.2763 8.1317C10.2899 7.92227 10.2096 7.70153 10.0491 7.26005L8.88299 4.05321C8.745 3.67376 8.67601 3.48403 8.55442 3.3441C8.44701 3.22049 8.31089 3.12515 8.15802 3.06645C7.98496 3 7.78308 3 7.37932 3H4.56201C4.08188 3 3.84181 3 3.63598 3.09925C3.4655 3.18146 3.29814 3.33701 3.2037 3.50103C3.08968 3.69907 3.07375 3.91662 3.04189 4.35173C3.01413 4.73086 3 5.11378 3 5.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                +1 (555) 123-4567
+              </a>
+            </div>
+            <div class="">
+              <h3 class="text-xl font-medium tracking-tight text-white">Visit us</h3>
+              <p class="mt-2 text-base leading-7 text-gray-300">Come see us at our HQ.</p>
+              <a href="#" class="mt-4 inline-flex gap-2 text-base font-semibold text-white">
+                <svg class="mt-0.5 h-5 w-5 text-pink-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+                7890 High Street, London, W1A 1AA
+              </a>
+            </div>
+          </div>
+          <form action="#" method="POST" class="lg:col-span-7">
+            <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+              <div>
+                <label for="first-name" class="block select-none text-sm font-semibold leading-6 text-white">First name</label>
+                <input type="text" name="first-name" id="first-name" placeholder="First name" autocomplete="given-name" class="mt-2 w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+              </div>
+              <div>
+                <label for="last-name" class="block select-none text-sm font-semibold leading-6 text-white">Last name</label>
+                <input type="text" name="last-name" id="last-name" placeholder="Last name" autocomplete="family-name" class="mt-2 w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="email" class="block select-none text-sm font-semibold leading-6 text-white">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" autocomplete="email" class="mt-2 w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="phone" class="block select-none text-sm font-semibold leading-6 text-white">Phone</label>
+                <input type="tel" name="phone" id="phone" placeholder="+1 (555) 123-4567" autocomplete="tel" class="mt-2 w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+              </div>
+              <div class="sm:col-span-2">
+                <label for="message" class="block select-none text-sm font-semibold leading-6 text-white">Message</label>
+                <textarea name="message" id="message" rows="4" placeholder="Leave us a message" class="mt-2 w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6"></textarea>
+              </div>
+            </div>
+            <div class="mt-10">
+              <button type="submit" class="block w-full rounded-md bg-pink-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Let's talk</button>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-gray-400">
+              By submitting, I acknowledge and accept the
+              <a href="#" class="font-semibold text-white">privacy policy</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

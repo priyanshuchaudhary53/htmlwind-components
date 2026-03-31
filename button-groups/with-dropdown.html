@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With dropdown</title>
+    <link href="/assets/css/button-groups/preview.css" rel="stylesheet" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        <!--@js-->
+        const menuButton = document.getElementById("menu-button");
+        const menuItems = document.getElementById("menu-items");
+
+        // Hide the menu items on load
+        if (menuItems) {
+          // menuItems.classList.add("hidden");
+          // menuButton.setAttribute("aria-expanded", false);
+        }
+
+        // Toggle dropdown menu visibility on button click
+        menuButton?.addEventListener("click", (event) => {
+          event.stopPropagation(); // Prevent click from propagating to the document
+          const isExpanded = menuButton.getAttribute("aria-expanded") === "true";
+          menuButton.setAttribute("aria-expanded", !isExpanded);
+          menuItems?.classList.toggle("hidden");
+        });
+
+        // Close the dropdown when clicking outside of it
+        document.addEventListener("click", (event) => {
+          if (menuItems && !menuItems.classList.contains("hidden") && !menuItems.contains(event.target)) {
+            menuItems.classList.add("hidden");
+            menuButton.setAttribute("aria-expanded", "false");
+          }
+        });
+
+        // Close dropdown on Escape key press
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && menuItems && !menuItems.classList.contains("hidden")) {
+            menuItems.classList.add("hidden");
+            menuButton.setAttribute("aria-expanded", "false");
+          }
+        });
+        <!--@endjs-->
+      });
+    </script>
+  </head>
+  <body>
+    <div class="bg-white py-8">
+      <div class="mx-auto flex max-w-3xl flex-col items-center gap-y-4 px-4 sm:flex-row sm:items-center sm:justify-around">
+        <div class="min-h-48">
+          <!--@snippet-->
+          <div class="inline-flex -space-x-px rounded-lg shadow-sm">
+            <button type="button" class="rounded-l-lg bg-white px-4 py-2.5 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">Send message</button>
+            <div class="relative">
+              <button type="button" aria-haspopup="menu" aria-expanded="true" aria-controls="menu-items" id="menu-button" class="rounded-r-lg bg-white px-2.5 py-2.5 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
+                <span class="sr-only">Open options</span>
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div role="menu" id="menu-items" aria-labelledby="menu-button" class="absolute right-0 -mr-1 mt-2 flex w-52 flex-col overflow-hidden rounded-lg py-1 shadow-lg ring-1 ring-inset ring-gray-900/5">
+                <a href="#" class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 focus-visible:bg-gray-100 focus-visible:outline-none">Attach file</a>
+                <a href="#" class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 focus-visible:bg-gray-100 focus-visible:outline-none">Schedule message</a>
+                <a href="#" class="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 focus-visible:bg-gray-100 focus-visible:outline-none">Save as draft</a>
+              </div>
+            </div>
+          </div>
+          <!--@endsnippet-->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!-- REQUIRES @tailwindcss/forms plugin -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two columns with form</title>
+    <link href="/assets/css/ctas/preview.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-x-16 xl:gap-x-32">
+          <div class="mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-none">
+            <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Start your journey to smarter management</h2>
+            <div class="mt-6 space-y-4 lg:hidden">
+              <p class="text-lg text-gray-600">Transform the way you manage your business with our cutting-edge SaaS solution. Our platform is designed to simplify your workflows, boost productivity, and give you the insights you need to make informed decisions.</p>
+              <p class="text-lg text-gray-600">Join a community of forward-thinking businesses that are already benefiting from our comprehensive tools. Sign up now to discover how our solution can drive your success.</p>
+            </div>
+            <form method="POST" action="#" class="mt-10 flex flex-col gap-y-4 sm:items-start">
+              <label for="email" class="sr-only">Email</label>
+              <input type="email" name="email" id="email" placeholder="Enter your email" required class="w-full rounded-md border-0 bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:max-w-xs sm:text-sm sm:leading-6" />
+              <button type="submit" class="rounded-md bg-pink-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Get exclusive access</button>
+            </form>
+          </div>
+          <div class="hidden space-y-4 lg:block">
+            <p class="text-lg text-gray-600">Transform the way you manage your business with our cutting-edge SaaS solution. Our platform is designed to simplify your workflows, boost productivity, and give you the insights you need to make informed decisions.</p>
+            <p class="text-lg text-gray-600">Join a community of forward-thinking businesses that are already benefiting from our comprehensive tools. Sign up now to discover how our solution can drive your success.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

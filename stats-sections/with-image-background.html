@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With image background</title>
+    <link href="/assets/css/stats/preview.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+      <img class="absolute left-0 top-0 -z-10 h-full w-full object-cover" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2850&q=80&blend=111827&blend-mode=multiply&sat=-100&exp=15" alt="" />
+      <div class="relative isolate mx-auto max-w-7xl px-6 lg:px-8">
+        <div aria-hidden="true" class="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 blur-3xl">
+          <div class="aspect-[2/1] w-[80rem] bg-gradient-to-bl from-pink-500 to-violet-500 opacity-20" style="clip-path: polygon(62% 38%, 100% 74%, 86% 0, 58% 17%, 49% 80%, 39% 38%, 39% 3%, 11% 100%, 0 59%, 64% 100%)"></div>
+        </div>
+        <h2 class="mx-auto max-w-2xl text-base font-semibold leading-7 text-pink-500 lg:max-w-none">Our achievements</h2>
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-6 lg:max-w-none lg:grid-cols-2">
+          <div>
+            <p class="mt-2 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Fueling innovation and growth for businesses</p>
+          </div>
+          <div>
+            <p class="text-lg leading-8 text-gray-300">Our platform is trusted by companies of all sizes to streamline operations, boost productivity, and deliver superior results.</p>
+            <a href="#" class="mt-8 inline-block rounded-md bg-pink-500 px-6 py-2.5 text-center text-base font-medium tracking-tight text-white shadow-sm hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Get started</a>
+          </div>
+        </div>
+        <dl class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:max-w-none lg:grid-cols-4">
+          <div class="flex flex-col gap-y-3 border-l border-white/10 pl-6">
+            <dt class="text-base leading-7 text-gray-300">Verified users</dt>
+            <dd class="order-first text-4xl font-semibold tracking-tight text-white">2M+</dd>
+          </div>
+          <div class="flex flex-col gap-y-3 border-l border-white/10 pl-6">
+            <dt class="text-base leading-7 text-gray-300">supported account</dt>
+            <dd class="order-first text-4xl font-semibold tracking-tight text-white">1.5M</dd>
+          </div>
+          <div class="flex flex-col gap-y-3 border-l border-white/10 pl-6">
+            <dt class="text-base leading-7 text-gray-300">Rating</dt>
+            <dd class="order-first text-4xl font-semibold tracking-tight text-white">5.0</dd>
+          </div>
+          <div class="flex flex-col gap-y-3 border-l border-white/10 pl-6">
+            <dt class="text-base leading-7 text-gray-300">Customer satisfaction</dt>
+            <dd class="order-first text-4xl font-semibold tracking-tight text-white">98%</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

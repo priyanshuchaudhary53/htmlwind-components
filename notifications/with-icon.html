@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With icon</title>
+    <link href="/assets/css/notification/preview.css" rel="stylesheet" />
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
+        <!--@js-->
+        // Handle click events using event delegation
+        document.addEventListener("click", (event) => {
+          const button = event.target.closest("button");
+          if (button?.classList.contains("close")) {
+            closeBtnHandler(button);
+          }
+        });
+
+        const closeBtnHandler = (button) => {
+          try {
+            // Find the closest notification element
+            const notification = button.closest(".notification");
+            if (!notification) return;
+
+            // Add fade-out effect
+            notification.classList.add("opacity-0");
+
+            // Remove the notification after the transition
+            const transitionDuration =
+              parseFloat(getComputedStyle(notification).transitionDuration) *
+                1000 || 150;
+            setTimeout(() => {
+              notification.remove();
+            }, transitionDuration);
+          } catch (error) {
+            console.error("Error closing notification:", error);
+          }
+        };
+        <!--@endjs-->
+      });
+    </script>
+  </head>
+  <body>
+    <div class="min-h-80 bg-gray-50">
+      <!--@snippet-->
+      <div
+        aria-live="assertive"
+        class="pointer-events-none fixed inset-x-4 bottom-6 flex flex-col items-center space-y-4 sm:inset-x-6 sm:bottom-auto sm:top-6 sm:items-end"
+      >
+        <div
+          class="notification pointer-events-auto relative flex w-full max-w-sm items-start gap-x-3 rounded-xl bg-white p-4 shadow-lg ring-1 ring-inset ring-gray-200 transition-opacity"
+        >
+          <div class="flex flex-1 flex-col gap-4 sm:flex-row">
+            <div class="shrink-0">
+              <svg
+                aria-hidden="true"
+                class="size-5 text-green-500"
+                viewBox="0 0 55 56"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M43.8919 18.4573C45.1123 19.6777 45.1123 21.6563 43.8919 22.8767L25.9716 40.797C24.7513 42.0173 22.7727 42.0173 21.5523 40.797L13.5257 32.771C12.3053 31.5507 12.3052 29.572 13.5256 28.3516C14.7459 27.1312 16.7245 27.1311 17.945 28.3515L23.7618 34.1679L39.4725 18.4573C40.6929 17.2369 42.6715 17.2369 43.8919 18.4573Z"
+                  fill="currentColor"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M27.5 5.66699C15.0736 5.66699 5 15.7406 5 28.167C5 40.5934 15.0736 50.667 27.5 50.667C39.9264 50.667 50 40.5934 50 28.167C50 15.7406 39.9264 5.66699 27.5 5.66699ZM0 28.167C0 12.9792 12.3122 0.666992 27.5 0.666992C42.6878 0.666992 55 12.9792 55 28.167C55 43.3548 42.6878 55.667 27.5 55.667C12.3122 55.667 0 43.3548 0 28.167Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+            </div>
+            <div class="flex-1">
+              <p class="text-sm font-semibold text-gray-900">
+                Successfully saved!
+              </p>
+              <p class="mt-1 text-sm text-gray-500">
+                You can view the updated information on the dashboard.
+              </p>
+            </div>
+          </div>
+          <div
+            class="absolute right-4 top-4 shrink-0 sm:static sm:right-auto sm:top-auto"
+          >
+            <button
+              type="button"
+              class="close relative rounded-md text-gray-400 hover:text-gray-500 focus:outline-2 focus:outline-offset-2 focus:outline-pink-500"
+            >
+              <span class="sr-only">Close</span>
+              <svg
+                aria-hidden="true"
+                class="size-5"
+                viewBox="0 0 60 60"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M15.573 41.6601C14.809 42.4242 14.809 43.6628 15.573 44.4269C16.3371 45.191 17.5759 45.191 18.34 44.4269L15.573 41.6601ZM31.3834 31.3834C32.1475 30.6193 32.1475 29.3807 31.3834 28.6166C30.6193 27.8525 29.3807 27.8525 28.6166 28.6166L31.3834 31.3834ZM28.6166 28.6166C27.8525 29.3807 27.8525 30.6193 28.6166 31.3834C29.3807 32.1475 30.6193 32.1475 31.3834 31.3834L28.6166 28.6166ZM44.4269 18.34C45.191 17.5759 45.191 16.3371 44.4269 15.573C43.6628 14.809 42.4242 14.809 41.6601 15.573L44.4269 18.34ZM31.3834 28.6166C30.6193 27.8525 29.3807 27.8525 28.6166 28.6166C27.8525 29.3807 27.8525 30.6193 28.6166 31.3834L31.3834 28.6166ZM41.6601 44.4269C42.4242 45.191 43.6628 45.191 44.4269 44.4269C45.191 43.6628 45.191 42.4242 44.4269 41.6601L41.6601 44.4269ZM28.6166 31.3834C29.3807 32.1475 30.6193 32.1475 31.3834 31.3834C32.1475 30.6193 32.1475 29.3807 31.3834 28.6166L28.6166 31.3834ZM18.34 15.573C17.5759 14.809 16.3371 14.809 15.573 15.573C14.809 16.3371 14.809 17.5759 15.573 18.34L18.34 15.573ZM18.34 44.4269L31.3834 31.3834L28.6166 28.6166L15.573 41.6601L18.34 44.4269ZM31.3834 31.3834L44.4269 18.34L41.6601 15.573L28.6166 28.6166L31.3834 31.3834ZM28.6166 31.3834L41.6601 44.4269L44.4269 41.6601L31.3834 28.6166L28.6166 31.3834ZM31.3834 28.6166L18.34 15.573L15.573 18.34L28.6166 31.3834L31.3834 28.6166Z"
+                  fill="currentColor"
+                ></path>
+              </svg>
+              <span class="absolute -inset-0.5 rounded-md"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!--@endsnippet-->
+    </div>
+  </body>
+</html>

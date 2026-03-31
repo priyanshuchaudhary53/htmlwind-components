@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered with images</title>
+    <link href="/assets/css/newsletters/preview.css" rel="stylesheet" />
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const submitButton = document.querySelector("button");
+
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="bg-white py-24 sm:py-32">
+      <div class="px-6 text-center lg:px-8">
+        <h2 class="mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">Stay informed about our launch!</h2>
+        <p class="mx-auto mt-2 max-w-xl text-lg leading-8 text-gray-600">Receive exclusive updates and be among the first to explore our latest features.</p>
+        <form method="POST" action="#" class="mx-auto mt-10 sm:max-w-md">
+          <div class="flex flex-col flex-wrap gap-4 sm:flex-row">
+            <div class="flex-auto">
+              <label for="email" class="sr-only">Email</label>
+              <input type="email" name="email" id="email" placeholder="Enter your email" class="w-full rounded-md border-0 bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+            </div>
+            <button type="submit" class="flex-none rounded-md bg-pink-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Subscribe</button>
+          </div>
+        </form>
+        <div class="mt-6 flex flex-col items-center justify-center gap-x-4 gap-y-2 sm:flex-row">
+          <div class="flex flex-none items-center -space-x-3" role="group" aria-label="Subscriber profile pictures">
+            <div class="relative -m-0.5 rounded-full bg-white p-0.5">
+              <span aria-hidden="true" class="absolute inset-0.5 h-8 w-8 rounded-full ring-1 ring-inset ring-gray-900/10"></span>
+              <img alt="" class="h-8 w-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=256&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="relative -m-0.5 rounded-full bg-white p-0.5">
+              <span aria-hidden="true" class="absolute inset-0.5 h-8 w-8 rounded-full ring-1 ring-inset ring-gray-900/10"></span>
+              <img alt="" class="h-8 w-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1587397845856-e6cf49176c70?q=80&w=256&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="relative -m-0.5 rounded-full bg-white p-0.5">
+              <span aria-hidden="true" class="absolute inset-0.5 h-8 w-8 rounded-full ring-1 ring-inset ring-gray-900/10"></span>
+              <img alt="" class="h-8 w-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=256&h=256&auto=format&fit=facearea&facepad=2&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+            <div class="relative -m-0.5 rounded-full bg-white p-0.5">
+              <span aria-hidden="true" class="absolute inset-0.5 h-8 w-8 rounded-full ring-1 ring-inset ring-gray-900/10"></span>
+              <img alt="" class="h-8 w-8 rounded-full object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=256&h=256&auto=format&fit=facearea&facepad=2&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+            </div>
+          </div>
+          <p class="text-sm font-medium text-gray-600" aria-label="3,000 subscribers">3,000+ already subscribed</p>
+        </div>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

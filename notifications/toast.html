@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toast</title>
+    <link href="/assets/css/notification/preview.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="min-h-80 bg-gray-50">
+      <!--@snippet-->
+      <div aria-live="assertive" class="pointer-events-none fixed inset-x-4 bottom-6 flex flex-col items-center space-y-4 sm:inset-x-6 sm:bottom-auto sm:top-6">
+        <div class="pointer-events-auto flex max-w-sm items-start gap-x-2.5 rounded-full bg-white px-4 py-2.5 shadow transition-opacity">
+          <div class="-ml-1.5 shrink-0">
+            <svg aria-hidden="true" class="size-5 text-green-500" viewBox="0 0 55 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M43.8919 18.4573C45.1123 19.6777 45.1123 21.6563 43.8919 22.8767L25.9716 40.797C24.7513 42.0173 22.7727 42.0173 21.5523 40.797L13.5257 32.771C12.3053 31.5507 12.3052 29.572 13.5256 28.3516C14.7459 27.1312 16.7245 27.1311 17.945 28.3515L23.7618 34.1679L39.4725 18.4573C40.6929 17.2369 42.6715 17.2369 43.8919 18.4573Z" fill="currentColor"></path>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M27.5 5.66699C15.0736 5.66699 5 15.7406 5 28.167C5 40.5934 15.0736 50.667 27.5 50.667C39.9264 50.667 50 40.5934 50 28.167C50 15.7406 39.9264 5.66699 27.5 5.66699ZM0 28.167C0 12.9792 12.3122 0.666992 27.5 0.666992C42.6878 0.666992 55 12.9792 55 28.167C55 43.3548 42.6878 55.667 27.5 55.667C12.3122 55.667 0 43.3548 0 28.167Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <p class="text-sm text-gray-700">Message sent!</p>
+        </div>
+      </div>
+      <!--@endsnippet-->
+    </div>
+  </body>
+</html>

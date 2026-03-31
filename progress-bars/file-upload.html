@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>File upload</title>
+    <link href="/assets/css/progress/preview.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bg-white py-12">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!--@snippet-->
+        <div class="relative mx-auto flex max-w-lg flex-col gap-y-1 rounded-xl bg-white p-4 ring-1 ring-inset ring-gray-200">
+          <div class="flex gap-x-3">
+            <div aria-hidden="true" class="relative size-10">
+              <svg class="size-10 text-gray-300" viewBox="0 0 534 668" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M300.334 34.029C297.15 34 293.577 34 289.49 34H140.34C103.003 34 84.321 34 70.0603 41.2663C57.516 47.6577 47.3247 57.849 40.9333 70.3933C33.667 84.654 33.667 103.336 33.667 140.673V527.34C33.667 564.677 33.667 583.337 40.9333 597.597C47.3247 610.14 57.516 620.35 70.0603 626.74C84.3073 634 102.967 634 140.232 634H393.77C431.034 634 449.667 634 463.914 626.74C476.457 620.35 486.684 610.14 493.074 597.597C500.334 583.35 500.334 564.717 500.334 527.453V244.856C500.334 240.765 500.334 237.187 500.304 234M300.334 34.029C309.854 34.1157 315.877 34.4617 321.627 35.842C328.43 37.475 334.93 40.1753 340.894 43.8307C347.62 47.9523 353.394 53.7273 364.917 65.25L469.1 169.433C480.63 180.963 486.364 186.712 490.487 193.44C494.14 199.405 496.844 205.909 498.477 212.711C499.857 218.459 500.21 224.484 500.304 234M300.334 34.029V127.333C300.334 164.67 300.334 183.326 307.6 197.586C313.99 210.131 324.184 220.349 336.727 226.741C350.974 234 369.634 234 406.897 234H500.304M500.304 234H500.34" stroke="currentColor" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="absolute bottom-2 left-0 rounded-sm bg-pink-500 px-[3px] py-0.5 text-[8px]/[10px] font-bold text-white">SVG</span>
+            </div>
+            <div class="text-sm">
+              <h4 class="sr-only">File details</h4>
+              <p class="font-medium text-gray-900">Logo.svg</p>
+              <p class="text-sm text-gray-500">3.6 MB</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-x-3">
+            <div aria-hidden="true" class="h-2 w-full flex-1 overflow-hidden rounded-full bg-gray-200">
+              <div class="h-2 rounded-full bg-pink-500" style="width: 80%"></div>
+            </div>
+            <div class="w-10 shrink-0">
+              <h4 class="sr-only">Uploaded</h4>
+              <p class="text-right text-sm font-medium text-gray-900">80%</p>
+            </div>
+            <div class="absolute right-4 top-4">
+              <button type="button" class="relative -mr-[5px] flex h-4 w-4 items-center justify-center text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Cancel</span>
+                <svg class="size-4" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M3 9L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                  <path d="M9.00124 8.99992L3.002 3.00189" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path>
+                </svg>
+                <span class="absolute -inset-2"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!--@endsnippet-->
+      </div>
+    </div>
+  </body>
+</html>

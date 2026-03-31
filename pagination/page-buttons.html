@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page buttons</title>
+    <link href="/assets/css/pagination/preview.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bg-white py-8">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!--@snippet-->
+        <nav class="flex justify-center border-t border-gray-200 pt-3" aria-label="Pagination">
+          <div class="flex -space-x-px rounded-lg shadow-sm">
+            <a href="#" class="relative inline-flex items-center justify-center gap-x-2 rounded-l-lg p-2.5 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus-visible:outline-offset-0 sm:px-4 sm:py-2.5">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="sr-only sm:not-sr-only">Previous</span>
+            </a>
+            <a href="#" aria-current="page" class="relative z-10 inline-flex h-10 w-10 items-center justify-center bg-pink-500 text-sm font-semibold text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">1</a>
+            <a href="#" class="relative inline-flex h-10 w-10 items-center justify-center text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus-visible:outline-offset-0">2</a>
+            <a href="#" class="relative hidden h-10 w-10 items-center justify-center text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus-visible:outline-offset-0 sm:inline-flex">3</a>
+            <span class="relative inline-flex h-10 w-10 items-center justify-center text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300">...</span>
+            <a href="#" class="relative hidden h-10 w-10 items-center justify-center text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus-visible:outline-offset-0 sm:inline-flex">8</a>
+            <a href="#" class="inline-flex h-10 w-10 items-center justify-center text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus-visible:outline-offset-0">9</a>
+            <a href="#" class="inline-flex h-10 w-10 items-center justify-center text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus-visible:outline-offset-0">10</a>
+            <a href="#" class="inline-flex items-center justify-center gap-x-2 rounded-r-lg p-2.5 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus-visible:outline-offset-0 sm:px-4 sm:py-2.5">
+              <span class="sr-only sm:not-sr-only">Next</span>
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+          </div>
+        </nav>
+        <!--@endsnippet-->
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!-- REQUIRES @tailwindcss/forms plugin -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With signup form</title>
+    <link href="/assets/css/heroes/preview.css" rel="stylesheet" />
+    <script>
+      (function () {
+        document.addEventListener("DOMContentLoaded", function () {
+          <!--@js-->
+          const mobileMenuButton = document.getElementById("open-menu");
+          const closeMenuButton = document.getElementById("close-menu");
+          const mobileMenu = document.getElementById("mobile-menu");
+          const backdrop = document.getElementById("backdrop");
+
+          // Ensure the mobile menu and backdrop are hidden on load
+          if (mobileMenu) mobileMenu.classList.add("hidden");
+          if (backdrop) backdrop.classList.add("hidden");
+
+          // Function to open the mobile menu
+          function openMenu() {
+            if (mobileMenu) {
+              mobileMenu.classList.remove("hidden");
+              mobileMenu.setAttribute("aria-hidden", "false");
+            }
+            if (backdrop) {
+              backdrop.classList.remove("hidden");
+              backdrop.setAttribute("aria-hidden", "false");
+            }
+            closeMenuButton.focus(); // Focus the close button for better accessibility
+          }
+
+          // Function to close the mobile menu
+          function closeMenu() {
+            if (mobileMenu) {
+              mobileMenu.classList.add("hidden");
+              mobileMenu.setAttribute("aria-hidden", "true");
+            }
+            if (backdrop) {
+              backdrop.classList.add("hidden");
+              backdrop.setAttribute("aria-hidden", "true");
+            }
+            mobileMenuButton.focus(); // Return focus to the open button
+          }
+
+          // Event listeners for opening and closing the menu
+          if (mobileMenuButton) {
+            mobileMenuButton.addEventListener("click", openMenu);
+          }
+          if (closeMenuButton) {
+            closeMenuButton.addEventListener("click", closeMenu);
+          }
+          if (backdrop) {
+            backdrop.addEventListener("click", closeMenu); // Close the menu when clicking on the backdrop
+          }
+
+          // Handle keyboard accessibility (ESC to close menu)
+          document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+              closeMenu();
+            }
+          });
+          <!--@endjs-->
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="bg-white">
+      <header class="absolute inset-x-0 top-0 z-50 py-4 lg:py-5">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
+          <div class="flex lg:flex-1">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-8 w-auto" src="https://htmlwind.com/assets/images/logo/logoipsum-accent-283.svg" alt="" />
+            </a>
+          </div>
+          <div class="lg:hidden">
+            <button id="open-menu" type="button" class="-m-2.5 flex items-center justify-center rounded-lg p-2.5 text-gray-700">
+              <span class="sr-only">Open main menu</span>
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden lg:flex lg:gap-x-8">
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-700">Features</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-700">Services</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-700">Pricing</a>
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-700">About</a>
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:gap-x-3">
+            <a href="#" class="inline-block rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-gray-900">Login</a>
+            <a href="#" class="inline-block rounded-md bg-pink-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Sign up</a>
+          </div>
+        </nav>
+        <div id="mobile-menu" class="lg:hidden" role="dialog" aria-modal="true">
+          <div id="backdrop" class="fixed inset-0 z-50"></div>
+          <div class="fixed inset-0 z-50 w-full bg-white sm:left-auto sm:right-0 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between px-6 py-4">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <img class="h-8 w-auto" src="https://htmlwind.com/assets/images/logo/logoipsum-accent-283.svg" alt="" />
+              </a>
+              <button id="close-menu" type="button" class="-m-2.5 flex items-center justify-center rounded-lg p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M19 5L4.99998 19M5.00001 5L19 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="divide-y divide-gray-900/10 px-6">
+              <div class="space-y-0.5 py-5">
+                <a href="#" class="-mx-3 block rounded-lg px-4 py-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+                <a href="#" class="-mx-3 block rounded-lg px-4 py-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
+                <a href="#" class="-mx-3 block rounded-lg px-4 py-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="#" class="-mx-3 block rounded-lg px-4 py-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">About</a>
+              </div>
+              <div class="space-y-3 py-6">
+                <a href="#" class="block rounded-md bg-pink-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Sign up</a>
+                <a href="#" class="block rounded-md bg-white px-3.5 py-2.5 text-center text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-1 focus-visible:outline-gray-900">Login</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="relative isolate overflow-hidden pt-12 lg:pt-16">
+        <div aria-hidden="true" class="absolute left-0 bottom-0 sm:bottom-auto sm:top-72 -z-30 h-80 w-80 sm:h-[40rem] sm:w-[40rem] -translate-x-1/2 rounded-full bg-gradient-to-b from-pink-400 to-amber-300/40 opacity-50 blur-3xl sm:blur-[8rem]"></div>
+        <div aria-hidden="true" class="absolute right-0 translate-x-1/2 top-0 -z-20 h-80 w-80 rounded-full bg-gradient-to-b from-pink-500 to-amber-400/40 opacity-50 blur-3xl"></div>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="py-24 sm:py-32 lg:pb-0">
+            <h1 class="text-pretty text-center text-4xl font-semibold tracking-tight text-gray-900 sm:text-6xl">Manage projects like a pro</h1>
+            <p class="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">Organize tasks, track progress, and collaborate with clients effortlessly. Stay on top of deadlines and deliver your best work every time.</p>
+            <form method="POST" action="#" class="mx-auto mt-10 sm:max-w-md">
+              <div class="flex flex-col flex-wrap gap-4 sm:flex-row">
+                <div class="flex-auto">
+                  <label for="email" class="sr-only">Email</label>
+                  <input type="email" name="email" id="email" placeholder="Enter your email" class="w-full rounded-md border-0 bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+                </div>
+                <button type="submit" class="flex-none rounded-md bg-pink-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Get started</button>
+              </div>
+            </form>
+            <div class="relative mx-auto -mb-[20rem] mt-16 max-w-4xl sm:mt-24 lg:-mb-8">
+              <div class="-m-2 mr-32 hidden rounded-3xl bg-gray-900 p-2 shadow-lg lg:block">
+                <img width="1920" height="1139" class="h-auto w-full rounded-2xl bg-white/10" src="https://htmlwind.com/assets/images/dashboard-screenshot.webp" alt="dashboard screenshot" />
+              </div>
+              <div class="lg:absolute lg:right-0 lg:top-28 mx-auto max-w-[18rem] lg:max-w-[14rem]">
+                <div class="-m-2 rounded-[2rem] bg-gray-900 p-2 shadow-lg">
+                  <img width="880" height="1912" class="h-auto w-full rounded-3xl bg-white/10" src="https://htmlwind.com/assets/images/mobile-dashboard-screenshot.webp" alt="mobile dashboard screenshot" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

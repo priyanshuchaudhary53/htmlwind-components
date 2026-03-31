@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion on dark</title>
+    <link href="/assets/css/faqs/preview.css" rel="stylesheet" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        <!--@js-->
+        const ACCORDION_BUTTON = 'button[id^="accordion-button:"]';
+        const PANEL_PREFIX = "accordion-panel:";
+        const PLUS_ICON_CLASS = "plus-icon";
+        const MINUS_ICON_CLASS = "minus-icon";
+        const HIDDEN_CLASS = "hidden";
+
+        // Event delegation on the accordion container
+        const accordionContainer = document.querySelector(".accordion-container");
+
+        if (accordionContainer) {
+          accordionContainer.addEventListener("click", (event) => {
+            const button = event.target.closest(ACCORDION_BUTTON);
+            if (!button) return;
+
+            // Toggle the panel and icons
+            toggleAccordion(button);
+          });
+        }
+
+        function toggleAccordion(button) {
+          const panelId = button.getAttribute("aria-controls");
+          const panel = document.getElementById(panelId);
+
+          if (!panel) return;
+
+          // Toggle expanded state
+          const isExpanded = button.getAttribute("aria-expanded") === "true";
+          button.setAttribute("aria-expanded", !isExpanded);
+          panel.classList.toggle(HIDDEN_CLASS, isExpanded);
+
+          // Toggle icons visibility
+          const plusIcon = button.querySelector(`.${PLUS_ICON_CLASS}`);
+          const minusIcon = button.querySelector(`.${MINUS_ICON_CLASS}`);
+
+          if (plusIcon && minusIcon) {
+            plusIcon.classList.toggle(HIDDEN_CLASS, !isExpanded);
+            minusIcon.classList.toggle(HIDDEN_CLASS, isExpanded);
+          }
+        }
+        <!--@endjs-->
+      });
+    </script>
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="bg-gray-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <h2 class="text-center text-4xl font-semibold tracking-tight text-white sm:text-5xl">Frequently asked questions</h2>
+        <p class="mx-auto mt-6 max-w-2xl text-center text-base leading-7 text-gray-300">Have questions? We're here to help.</p>
+        <div class="accordion-container mx-auto mt-20 max-w-4xl">
+          <dl class="*:border-b *:border-white/10 *:py-6">
+            <div class="first:pt-0 last:border-b-0 last:pb-0">
+              <dt>
+                <button type="button" id="accordion-button:1" class="flex w-full items-start justify-between text-start" aria-expanded="false" aria-controls="accordion-panel:1">
+                  <span class="text-base font-semibold leading-7 text-white">Is your software bug-free?</span>
+                  <span class="ml-6 mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full ring-2 ring-inset ring-white">
+                    <svg class="plus-icon block h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="minus-icon hidden h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12L18 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 hidden pr-12" id="accordion-panel:1">
+                <p class="text-base leading-7 text-gray-300">Our software is as bug-free as a pristine forest... which is to say, there are probably a few bugs hiding somewhere. But don't worry, our team of digital exterminators is on standby!</p>
+              </dd>
+            </div>
+            <div class="first:pt-0 last:border-b-0 last:pb-0">
+              <dt>
+                <button type="button" id="accordion-button:2" class="flex w-full items-start justify-between text-start" aria-expanded="false" aria-controls="accordion-panel:2">
+                  <span class="text-base font-semibold leading-7 text-white">What do I do if I forget my password?</span>
+                  <span class="ml-6 mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full ring-2 ring-inset ring-white">
+                    <svg class="plus-icon block h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="minus-icon hidden h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12L18 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 hidden pr-12" id="accordion-panel:2">
+                <p class="text-base leading-7 text-gray-300">First, try panicking for a few seconds – this seems to help most people. If that doesn't work, click the “Forgot Password” link, and we’ll send you on a thrilling adventure to reset it!</p>
+              </dd>
+            </div>
+            <div class="first:pt-0 last:border-b-0 last:pb-0">
+              <dt>
+                <button type="button" id="accordion-button:3" class="flex w-full items-start justify-between text-start" aria-expanded="false" aria-controls="accordion-panel:3">
+                  <span class="text-base font-semibold leading-7 text-white">Can I use your software to become a billionaire?</span>
+                  <span class="ml-6 mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full ring-2 ring-inset ring-white">
+                    <svg class="plus-icon block h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="minus-icon hidden h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12L18 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 hidden pr-12" id="accordion-panel:3">
+                <p class="text-base leading-7 text-gray-300">Absolutely! But only if you already have a billion dollars. Otherwise, we recommend starting with something more attainable, like getting through your email inbox.</p>
+              </dd>
+            </div>
+            <div class="first:pt-0 last:border-b-0 last:pb-0">
+              <dt>
+                <button type="button" id="accordion-button:4" class="flex w-full items-start justify-between text-start" aria-expanded="false" aria-controls="accordion-panel:4">
+                  <span class="text-base font-semibold leading-7 text-white">Is there an option to make everything in dark mode?</span>
+                  <span class="ml-6 mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full ring-2 ring-inset ring-white">
+                    <svg class="plus-icon block h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="minus-icon hidden h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12L18 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 hidden pr-12" id="accordion-panel:4">
+                <p class="text-base leading-7 text-gray-300">We’re working on a mode so dark that it turns off your screen entirely! Until then, our regular dark mode should do the trick.</p>
+              </dd>
+            </div>
+            <div class="first:pt-0 last:border-b-0 last:pb-0">
+              <dt>
+                <button type="button" id="accordion-button:5" class="flex w-full items-start justify-between text-start" aria-expanded="false" aria-controls="accordion-panel:5">
+                  <span class="text-base font-semibold leading-7 text-white">Can I break the internet using your software?</span>
+                  <span class="ml-6 mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full ring-2 ring-inset ring-white">
+                    <svg class="plus-icon block h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="minus-icon hidden h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12L18 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 hidden pr-12" id="accordion-panel:5">
+                <p class="text-base leading-7 text-gray-300">Please don’t! The last time someone tried that, the entire office went into panic mode. Let’s keep the internet intact and just use our software as intended.</p>
+              </dd>
+            </div>
+            <div class="first:pt-0 last:border-b-0 last:pb-0">
+              <dt>
+                <button type="button" id="accordion-button:6" class="flex w-full items-start justify-between text-start" aria-expanded="false" aria-controls="accordion-panel:6">
+                  <span class="text-base font-semibold leading-7 text-white">Can I blame your software if my project fails?</span>
+                  <span class="ml-6 mt-1 flex h-5 w-5 flex-none items-center justify-center rounded-full ring-2 ring-inset ring-white">
+                    <svg class="plus-icon block h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12H18M12 6V18" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg class="minus-icon hidden h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <path d="M6 12L18 12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                </button>
+              </dt>
+              <dd class="mt-2 hidden pr-12" id="accordion-panel:6">
+                <p class="text-base leading-7 text-gray-300">You can try, but our software is designed to help, not perform miracles. It’s all about how you use it!</p>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

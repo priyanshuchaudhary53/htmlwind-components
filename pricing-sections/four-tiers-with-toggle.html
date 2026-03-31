@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Four tiers with toggle</title>
+    <link href="/assets/css/pricings/preview.css" rel="stylesheet" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        <!--@js-->
+        const prices = {
+          basic: { monthly: "$10", annually: "$99" },
+          standard: { monthly: "$30", annually: "$299" },
+          premium: { monthly: "$60", annually: "$599" },
+          enterprise: { monthly: "$100", annually: "$999" },
+        };
+
+        const monthlyBtn = document.getElementById("monthly-pricing-button");
+        const annualBtn = document.getElementById("annual-pricing-button");
+
+        const updatePrices = (isMonthly) => {
+          const period = isMonthly ? "monthly" : "annually";
+          const unit = isMonthly ? "/month" : "/year";
+
+          ["basic", "standard", "premium", "enterprise"].forEach((plan) => {
+            const priceElement = document.getElementById(`${plan}-price`);
+            priceElement.textContent = prices[plan][period];
+            priceElement.nextElementSibling.textContent = unit;
+          });
+
+          monthlyBtn.setAttribute("aria-pressed", isMonthly);
+          annualBtn.setAttribute("aria-pressed", !isMonthly);
+        };
+
+        monthlyBtn.addEventListener("click", () => updatePrices(true));
+        annualBtn.addEventListener("click", () => updatePrices(false));
+        <!--@endjs-->
+      });
+    </script>
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl text-center">
+          <h2 class="text-base font-semibold text-pink-500">Pricing</h2>
+          <p class="mt-3 text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Scalable solutions for businesses</p>
+          <p class="mx-auto mt-6 w-full max-w-2xl text-pretty text-xl leading-8 text-gray-600">Choose the plan that best fits your needs, from solo freelancers to large enterprises.</p>
+        </div>
+        <div class="mt-16">
+          <div class="flex justify-center">
+            <div class="flex items-center gap-1 rounded-lg bg-gray-50 p-1 ring-1 ring-gray-200">
+              <button id="monthly-pricing-button" aria-label="Show monthly options" aria-pressed="true" class="cursor-pointer rounded-md bg-transparent px-4 py-1.5 text-sm font-medium text-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-600 aria-pressed:bg-white aria-pressed:text-gray-900 aria-pressed:shadow">Monthly</button>
+              <button id="annual-pricing-button" aria-label="Show annual options" aria-pressed="false" class="cursor-pointer rounded-md bg-transparent px-4 py-1.5 text-sm font-medium text-gray-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-gray-600 aria-pressed:bg-white aria-pressed:text-gray-900 aria-pressed:shadow">Annual</button>
+            </div>
+          </div>
+        </div>
+        <div class="mx-auto mt-10 grid w-full max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:max-w-full xl:grid-cols-4">
+          <div class="flex flex-col rounded-2xl px-5 py-8 ring-1 ring-gray-200">
+            <h3 id="tier-basic" class="text-xl font-medium tracking-tight text-gray-900">Basic</h3>
+            <p class="mt-3 text-base text-gray-600">Essential Features for Getting Started.</p>
+            <p class="mt-6 flex items-baseline gap-x-1">
+              <span id="basic-price" class="text-5xl font-semibold tracking-tight text-gray-900">$10</span>
+              <span class="text-sm font-medium text-gray-600">/month</span>
+            </p>
+            <div class="mt-6">
+              <a href="#" aria-describedby="tier-basic" class="inline-block rounded-md px-6 py-2 text-sm font-medium text-pink-500 ring-1 ring-inset ring-pink-200 focus-within:outline-offset-2 hover:ring-pink-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink-500">Choose basic</a>
+            </div>
+            <div class="mt-6 h-px w-full bg-gray-100"></div>
+            <ul role="list" class="mt-6 space-y-4">
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">10 GB Secure Data Storage</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Basic Performance Analytics</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Project Management Tools</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Community Support Access</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Single User Access</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Standard Data Security Measures</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col rounded-2xl px-5 py-8 ring-1 ring-gray-200">
+            <h3 id="tier-standard" class="text-xl font-medium tracking-tight text-gray-900">Standard</h3>
+            <p class="mt-3 text-base text-gray-600">Advanced Tools for Growing Teams.</p>
+            <p class="mt-6 flex items-baseline gap-x-1">
+              <span id="standard-price" class="text-5xl font-semibold tracking-tight text-gray-900">$30</span>
+              <span class="text-sm font-medium text-gray-600">/month</span>
+            </p>
+            <div class="mt-6">
+              <a href="#" aria-describedby="tier-standard" class="inline-block rounded-md px-6 py-2 text-sm font-medium text-pink-500 ring-1 ring-inset ring-pink-200 focus-within:outline-offset-2 hover:ring-pink-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink-500">Choose standard</a>
+            </div>
+            <div class="mt-6 h-px w-full bg-gray-100"></div>
+            <ul role="list" class="mt-6 space-y-4">
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">100 GB Encrypted Storage</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Advanced Business Analytics</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Comprehensive Project Management</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Priority Email & Chat Support</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Team Collaboration Features</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Up to 10 Users</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Enhanced Security Protocols</p>
+              </li>
+            </ul>
+          </div>
+          <div class="relative flex flex-col rounded-2xl px-5 py-8 ring-2 ring-pink-500">
+            <p class="absolute right-5 top-0 rounded-b-lg bg-pink-500 px-5 py-1.5 text-xs font-medium text-white shadow-sm">Most popular</p>
+            <h3 id="tier-premium" class="text-xl font-medium tracking-tight text-pink-500">Premium</h3>
+            <p class="mt-3 text-base text-gray-600">Enhanced Features for Expanding Businesses.</p>
+            <p class="mt-6 flex items-baseline gap-x-1">
+              <span id="premium-price" class="text-5xl font-semibold tracking-tight text-gray-900">$60</span>
+              <span class="text-sm font-medium text-gray-600">/month</span>
+            </p>
+            <div class="mt-6">
+              <a href="#" aria-describedby="tier-premium" class="inline-block rounded-md bg-pink-500 px-6 py-2 text-sm font-medium text-white shadow-sm focus-within:outline-offset-2 hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink-500">Choose premium</a>
+            </div>
+            <div class="mt-6 h-px w-full bg-gray-100"></div>
+            <ul role="list" class="mt-6 space-y-4">
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">500 GB Secure Cloud Storage</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Premium Analytics and Reporting</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Multiple Project Management Tools</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Dedicated Customer Support</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Advanced Team Collaboration Tools</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Up to 50 Users</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">High-Level Security Measures</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Customizable User Interface</p>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col rounded-2xl px-5 py-8 ring-1 ring-gray-200">
+            <h3 id="tier-enterprise" class="text-xl font-medium tracking-tight text-gray-900">Enterprise</h3>
+            <p class="mt-3 text-base text-gray-600">Comprehensive Solutions for Large Organizations.</p>
+            <p class="mt-6 flex items-baseline gap-x-1">
+              <span id="enterprise-price" class="text-5xl font-semibold tracking-tight text-gray-900">$100</span>
+              <span class="text-sm font-medium text-gray-600">/month</span>
+            </p>
+            <div class="mt-6">
+              <a href="#" aria-describedby="tier-enterprise" class="inline-block rounded-md px-6 py-2 text-sm font-medium text-pink-500 ring-1 ring-inset ring-pink-200 focus-within:outline-offset-2 hover:ring-pink-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-pink-500">Choose enterprise</a>
+            </div>
+            <div class="mt-6 h-px w-full bg-gray-100"></div>
+            <ul role="list" class="mt-6 space-y-4">
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Unlimited Cloud Storage Capacity</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Extensive Data Analytics Suite</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Robust Project Management Tools</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Dedicated Account Management</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">24/7 Phone Support Service</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Advanced Collaboration Capabilities</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Unlimited Users</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">API Integration Access</p>
+              </li>
+              <li class="flex gap-x-3">
+                <svg class="h-5 w-5 text-pink-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <g id="Complete">
+                    <g id="tick">
+                      <polyline fill="none" points="3.7 14.3 9.6 19 20.3 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+                    </g>
+                  </g>
+                </svg>
+                <p class="text-sm text-gray-600">Custom Security Solutions</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

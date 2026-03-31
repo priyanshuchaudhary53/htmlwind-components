@@ -1,0 +1,55 @@
+<!-- REQUIRES @tailwindcss/forms plugin -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple justified on dark</title>
+    <link href="/assets/css/newsletters/preview.css" rel="stylesheet" />
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const submitButton = document.querySelector("button");
+
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="bg-gray-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-12">
+          <div class="max-w-xl lg:col-span-7">
+            <h2 class="inline text-3xl font-semibold tracking-tight text-white sm:block sm:text-4xl">Want the latest product updates?</h2>
+            <p class="inline text-3xl font-semibold tracking-tight text-white sm:block sm:text-4xl">Subscribe to our newsletter.</p>
+          </div>
+          <form method="POST" action="#" class="lg:col-span-5">
+            <div class="flex flex-col flex-wrap gap-4 sm:max-w-md sm:flex-row">
+              <div class="flex-auto">
+                <label for="email" class="sr-only">Email</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" class="w-full rounded-md border-0 bg-white/5 px-3.5 py-2 text-base text-white shadow-sm ring-1 ring-inset ring-white/10 placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+              </div>
+              <div class="inline-flex w-full items-center gap-x-2.5 sm:order-last">
+                <div class="group relative flex h-4 w-4">
+                  <input type="checkbox" name="privacy" id="privacy" class="h-4 w-4 rounded border-gray-600 bg-gray-900 text-pink-500 checked:bg-none indeterminate:bg-none focus:border-gray-600 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-gray-900 disabled:bg-gray-800 disabled:checked:border-gray-600 disabled:checked:bg-gray-800 disabled:indeterminate:border-gray-600 disabled:indeterminate:bg-gray-800" checked />
+                  <svg class="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 stroke-white group-has-[:disabled]:stroke-gray-600" aria-hidden="true" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="opacity-0 group-has-[:indeterminate]:opacity-100" d="M2.5 6H9.5" stroke-width="1.67" stroke-linecap="round" />
+                    <path class="opacity-0 group-has-[:checked]:opacity-100" d="M2 6.05059L4.47477 8.52525L10 3" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <label for="privacy" class="select-none text-sm leading-6 text-gray-300">
+                  I agree to the
+                  <a href="#" class="font-semibold text-white">privacy policy</a>.
+                </label>
+              </div>
+              <button type="submit" class="flex-none rounded-md bg-pink-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

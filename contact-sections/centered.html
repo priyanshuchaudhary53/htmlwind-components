@@ -1,0 +1,148 @@
+<!-- REQUIRES @tailwindcss/forms plugin -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Centered</title>
+    <link href="/assets/css/contacts/preview.css" rel="stylesheet" />
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const submitButton = document.querySelector("button");
+
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--@snippet-->
+    <!-- Test -->
+    <div class="bg-white py-24 sm:py-32">
+      <div class="px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">Let’s discuss your project</h2>
+          <p class="mt-2 text-lg leading-8 text-gray-600">We assist businesses and individuals in developing their brands.</p>
+        </div>
+        <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+          <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+            <div>
+              <label for="first-name" class="block select-none text-sm font-semibold leading-6 text-gray-900">First name</label>
+              <input type="text" name="first-name" id="first-name" placeholder="First name" autocomplete="given-name" class="mt-2 w-full rounded-md border-0 bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+            </div>
+            <div>
+              <label for="last-name" class="block select-none text-sm font-semibold leading-6 text-gray-900">Last name</label>
+              <input type="text" name="last-name" id="last-name" placeholder="Last name" autocomplete="family-name" class="mt-2 w-full rounded-md border-0 bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+            </div>
+            <div class="sm:col-span-2">
+              <label for="email" class="block select-none text-sm font-semibold leading-6 text-gray-900">Email</label>
+              <input type="email" name="email" id="email" placeholder="Email" autocomplete="email" class="mt-2 w-full rounded-md border-0 bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+            </div>
+            <div class="sm:col-span-2">
+              <div class="flex justify-between">
+                <label for="company" class="block select-none text-sm font-semibold leading-6 text-gray-900">Company</label>
+                <p id="company-description" class="text-sm leading-6 text-gray-400">Optional</p>
+              </div>
+              <input type="text" name="company" id="company" placeholder="Company" aria-describedby="company-description" class="mt-2 w-full rounded-md border-0 bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+            </div>
+            <div class="sm:col-span-2">
+              <div class="flex justify-between">
+                <label for="phone" class="block select-none text-sm font-semibold leading-6 text-gray-900">Phone</label>
+                <p id="phone-description" class="text-sm leading-6 text-gray-400">Optional</p>
+              </div>
+              <div class="relative mt-2">
+                <div class="absolute inset-y-0 left-0">
+                  <label for="country" class="sr-only">Country</label>
+                  <select name="country" id="country" class="rounded-md border-0 bg-transparent bg-none py-2 pl-4 pr-8 text-base text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6">
+                    <option value="US">US</option>
+                    <option value="FR">FR</option>
+                    <option value="IT">IT</option>
+                    <option value="DE">DE</option>
+                  </select>
+                  <svg class="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <input type="tel" name="phone" id="phone" placeholder="+1 (555) 123-4567" autocomplete="tel" aria-describedby="phone-description" class="w-full rounded-md border-0 bg-white py-2 pl-20 pr-3.5 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6" />
+              </div>
+            </div>
+            <div class="sm:col-span-2">
+              <label for="message" class="block select-none text-sm font-semibold leading-6 text-gray-900">Message</label>
+              <textarea name="message" id="message" rows="4" placeholder="Leave us a message" class="mt-2 w-full rounded-md border-0 bg-white px-3.5 py-2 text-base text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink-500 sm:text-sm sm:leading-6"></textarea>
+            </div>
+            <fieldset class="sm:col-span-2">
+              <legend class="block select-none text-sm font-semibold leading-6 text-gray-900">Project scope</legend>
+              <div class="mt-2 grid grid-cols-1 gap-2 text-sm leading-6 text-gray-600 sm:grid-cols-2">
+                <div class="flex items-center gap-x-2.5">
+                  <div class="group relative flex h-4 w-4">
+                    <input type="checkbox" name="scope" id="scope-website-redesign" value="scope-website-redesign" class="h-4 w-4 rounded border-gray-300 bg-white text-pink-500 checked:bg-none indeterminate:bg-none focus:border-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-white disabled:bg-gray-100 disabled:checked:border-gray-300 disabled:checked:bg-gray-100 disabled:indeterminate:border-gray-300 disabled:indeterminate:bg-gray-100" />
+                    <svg class="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 stroke-white group-has-[:disabled]:stroke-gray-300" aria-hidden="true" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="opacity-0 group-has-[:indeterminate]:opacity-100" d="M2.5 6H9.5" stroke-width="1.67" stroke-linecap="round" />
+                      <path class="opacity-0 group-has-[:checked]:opacity-100" d="M2 6.05059L4.47477 8.52525L10 3" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <label for="scope-website-redesign" class="select-none">Website redesign</label>
+                </div>
+                <div class="flex items-center gap-x-2.5">
+                  <div class="group relative flex h-4 w-4">
+                    <input type="checkbox" name="scope" id="scope-brand-strategy" value="scope-brand-strategy" class="h-4 w-4 rounded border-gray-300 bg-white text-pink-500 checked:bg-none indeterminate:bg-none focus:border-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-white disabled:bg-gray-100 disabled:checked:border-gray-300 disabled:checked:bg-gray-100 disabled:indeterminate:border-gray-300 disabled:indeterminate:bg-gray-100" />
+                    <svg class="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 stroke-white group-has-[:disabled]:stroke-gray-300" aria-hidden="true" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="opacity-0 group-has-[:indeterminate]:opacity-100" d="M2.5 6H9.5" stroke-width="1.67" stroke-linecap="round" />
+                      <path class="opacity-0 group-has-[:checked]:opacity-100" d="M2 6.05059L4.47477 8.52525L10 3" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <label for="scope-brand-strategy" class="select-none">Brand strategy</label>
+                </div>
+                <div class="flex items-center gap-x-2.5">
+                  <div class="group relative flex h-4 w-4">
+                    <input type="checkbox" name="scope" id="scope-seo-optimization" value="scope-seo-optimization" class="h-4 w-4 rounded border-gray-300 bg-white text-pink-500 checked:bg-none indeterminate:bg-none focus:border-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-white disabled:bg-gray-100 disabled:checked:border-gray-300 disabled:checked:bg-gray-100 disabled:indeterminate:border-gray-300 disabled:indeterminate:bg-gray-100" />
+                    <svg class="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 stroke-white group-has-[:disabled]:stroke-gray-300" aria-hidden="true" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="opacity-0 group-has-[:indeterminate]:opacity-100" d="M2.5 6H9.5" stroke-width="1.67" stroke-linecap="round" />
+                      <path class="opacity-0 group-has-[:checked]:opacity-100" d="M2 6.05059L4.47477 8.52525L10 3" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <label for="scope-seo-optimization" class="select-none">SEO optimization</label>
+                </div>
+                <div class="flex items-center gap-x-2.5">
+                  <div class="group relative flex h-4 w-4">
+                    <input type="checkbox" name="scope" id="scope-content-creation" value="scope-content-creation" class="h-4 w-4 rounded border-gray-300 bg-white text-pink-500 checked:bg-none indeterminate:bg-none focus:border-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-white disabled:bg-gray-100 disabled:checked:border-gray-300 disabled:checked:bg-gray-100 disabled:indeterminate:border-gray-300 disabled:indeterminate:bg-gray-100" />
+                    <svg class="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 stroke-white group-has-[:disabled]:stroke-gray-300" aria-hidden="true" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="opacity-0 group-has-[:indeterminate]:opacity-100" d="M2.5 6H9.5" stroke-width="1.67" stroke-linecap="round" />
+                      <path class="opacity-0 group-has-[:checked]:opacity-100" d="M2 6.05059L4.47477 8.52525L10 3" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <label for="scope-content-creation" class="select-none">Content creation</label>
+                </div>
+                <div class="flex items-center gap-x-2.5">
+                  <div class="group relative flex h-4 w-4">
+                    <input type="checkbox" name="scope" id="scope-marketing-campaign" value="scope-marketing-campaign" class="h-4 w-4 rounded border-gray-300 bg-white text-pink-500 checked:bg-none indeterminate:bg-none focus:border-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-white disabled:bg-gray-100 disabled:checked:border-gray-300 disabled:checked:bg-gray-100 disabled:indeterminate:border-gray-300 disabled:indeterminate:bg-gray-100" />
+                    <svg class="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 stroke-white group-has-[:disabled]:stroke-gray-300" aria-hidden="true" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="opacity-0 group-has-[:indeterminate]:opacity-100" d="M2.5 6H9.5" stroke-width="1.67" stroke-linecap="round" />
+                      <path class="opacity-0 group-has-[:checked]:opacity-100" d="M2 6.05059L4.47477 8.52525L10 3" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <label for="scope-marketing-campaign" class="select-none">Marketing campaign</label>
+                </div>
+                <div class="flex items-center gap-x-2.5">
+                  <div class="group relative flex h-4 w-4">
+                    <input type="checkbox" name="scope" id="scope-other" value="scope-other" class="h-4 w-4 rounded border-gray-300 bg-white text-pink-500 checked:bg-none indeterminate:bg-none focus:border-gray-300 focus:ring-2 focus:ring-pink-500 focus:ring-offset-2 focus:ring-offset-white disabled:bg-gray-100 disabled:checked:border-gray-300 disabled:checked:bg-gray-100 disabled:indeterminate:border-gray-300 disabled:indeterminate:bg-gray-100" />
+                    <svg class="pointer-events-none absolute left-1/2 top-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 stroke-white group-has-[:disabled]:stroke-gray-300" aria-hidden="true" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path class="opacity-0 group-has-[:indeterminate]:opacity-100" d="M2.5 6H9.5" stroke-width="1.67" stroke-linecap="round" />
+                      <path class="opacity-0 group-has-[:checked]:opacity-100" d="M2 6.05059L4.47477 8.52525L10 3" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <label for="scope-other" class="select-none">Other</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="mt-10">
+            <button type="submit" class="block w-full rounded-md bg-pink-500 px-3.5 py-2.5 text-sm font-semibold text-white hover:bg-pink-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-pink-500">Let's talk</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

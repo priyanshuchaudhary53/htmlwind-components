@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Three column</title>
+    <link href="/assets/css/contacts/preview.css" rel="stylesheet" />
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const submitButton = document.querySelector("button");
+
+        submitButton.addEventListener("click", function (e) {
+          e.preventDefault();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <!--@snippet-->
+    <div class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-3">
+          <div class="text-center">
+            <svg class="mx-auto h-7 w-7 text-pink-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <h3 class="mt-4 text-xl font-medium tracking-tight text-gray-900">Los Angeles, USA</h3>
+            <address class="mt-2 text-base not-italic leading-7 text-gray-600">
+              <p>4556 Brendan Ferry</p>
+              <p>Los Angeles, CA 90210</p>
+            </address>
+          </div>
+          <div class="text-center">
+            <svg class="mx-auto h-7 w-7 text-pink-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <h3 class="mt-4 text-xl font-medium tracking-tight text-gray-900">Toronto, Canada</h3>
+            <address class="mt-2 text-base not-italic leading-7 text-gray-600">
+              <p>1234 Maple Street</p>
+              <p>Toronto, ON M5A 1A1</p>
+            </address>
+          </div>
+          <div class="text-center">
+            <svg class="mx-auto h-7 w-7 text-pink-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <h3 class="mt-4 text-xl font-medium tracking-tight text-gray-900">London, UK</h3>
+            <address class="mt-2 text-base not-italic leading-7 text-gray-600">
+              <p>7890 High Street</p>
+              <p>London, W1A 1AA</p>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--@endsnippet-->
+  </body>
+</html>

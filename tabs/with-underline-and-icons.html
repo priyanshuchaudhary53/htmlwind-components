@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>With underline and icons</title>
+    <link href="/assets/css/tab/preview.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="bg-white py-12">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <!--@snippet-->
+        <div class="w-full">
+          <div class="sm:hidden">
+            <select aria-label="Select a tab" class="w-full appearance-none rounded-lg border-none bg-white px-3.5 py-2.5 text-base font-medium text-gray-900 shadow-sm outline outline-1 -outline-offset-1 outline-gray-300 focus:outline-2 focus:-outline-offset-2 focus:outline-pink-500 focus:ring-0">
+              <option>Overview</option>
+              <option selected>Analytics</option>
+              <option>Notifications</option>
+              <option>Settings</option>
+            </select>
+          </div>
+          <div class="hidden sm:block">
+            <div class="border-b border-gray-200">
+              <nav aria-label="Tabs" class="-mb-px flex items-end gap-x-8">
+                <a href="#" class="group inline-flex items-center gap-x-2 border-b-2 border-transparent px-1 py-3.5 text-sm font-semibold text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                  <svg aria-hidden="true" class="-ml-0.5 size-5 text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 8.2V19H7.71429V14.2C7.71429 12.8745 8.73763 11.8 10 11.8C11.2624 11.8 12.2857 12.8745 12.2857 14.2V19H18V8.2L10 1L2 8.2Z" fill="currentColor" />
+                  </svg>
+                  <span>Overview</span>
+                </a>
+                <a href="#" aria-current="page" class="inline-flex items-center gap-x-2 border-b-2 border-pink-500 px-1 py-3.5 text-sm font-semibold text-pink-500">
+                  <svg aria-hidden="true" class="-ml-0.5 size-5 text-pink-500" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.4375 1V10.7313L18.4077 13.4222C18.757 12.5554 19 11.512 19 10.3212C19 5.17319 14.1923 1 9.4375 1ZM8.3125 2.6875C4.39131 3.097 1 6.63962 1 10.8437C1 15.3482 4.65175 19 9.15625 19C12.4733 19 15.3229 17.0166 16.5976 14.1726L8.3125 11.6875V2.6875Z" fill="currentColor" />
+                  </svg>
+                  <span>Analytics</span>
+                </a>
+                <a href="#" class="group inline-flex items-center gap-x-2 border-b-2 border-transparent px-1 py-3.5 text-sm font-semibold text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                  <svg aria-hidden="true" class="-ml-0.5 size-5 text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.9348 16.4285C12.9348 17.1105 12.6638 17.7646 12.1813 18.2468C11.6987 18.7291 11.0443 19 10.3619 19C9.67956 19 9.02514 18.7291 8.54262 18.2468C8.06011 17.7646 7.78904 17.1105 7.78904 16.4285H12.9348ZM16.7942 15.1428H2.77187C2.56716 15.1428 2.37083 15.0615 2.22608 14.9169C2.08132 14.7722 2 14.576 2 14.3714C2 14.1668 2.08132 13.9706 2.22608 13.8259C2.37083 13.6812 2.56716 13.6 2.77187 13.6H3.92968V8.71419C3.92968 5.60274 6.14238 3.00557 9.08192 2.41414C9.06397 2.23536 9.0837 2.05481 9.13985 1.88413C9.19601 1.71344 9.28733 1.55642 9.40794 1.42317C9.52854 1.28993 9.67575 1.18343 9.84007 1.11055C10.0044 1.03766 10.1822 1 10.3619 1C10.5417 1 10.7195 1.03766 10.8838 1.11055C11.0481 1.18343 11.1953 1.28993 11.3159 1.42317C11.4366 1.55642 11.5279 1.71344 11.584 1.88413C11.6402 2.05481 11.6599 2.23536 11.642 2.41414C13.0958 2.70968 14.4028 3.49823 15.3417 4.6463C16.2806 5.79437 16.7937 7.23143 16.7942 8.71419V13.6H17.952C18.1567 13.6 18.3531 13.6812 18.4978 13.8259C18.6426 13.9706 18.7239 14.1668 18.7239 14.3714C18.7239 14.576 18.6426 14.7722 18.4978 14.9169C18.3531 15.0615 18.1567 15.1428 17.952 15.1428H16.7942Z" fill="currentColor" />
+                  </svg>
+                  <span>Notifications</span>
+                </a>
+                <a href="#" class="group inline-flex items-center gap-x-2 border-b-2 border-transparent px-1 py-3.5 text-sm font-semibold text-gray-500 hover:border-gray-300 hover:text-gray-700">
+                  <svg aria-hidden="true" class="-ml-0.5 size-5 text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.44 10.882C16.476 10.594 16.503 10.306 16.503 10C16.503 9.694 16.476 9.406 16.44 9.118L18.3386 7.633C18.5096 7.498 18.5546 7.255 18.4466 7.057L16.647 3.943C16.539 3.745 16.2961 3.673 16.0981 3.745L13.8576 4.645C13.3897 4.285 12.8858 3.988 12.3369 3.763L11.995 1.378C11.968 1.162 11.779 1 11.5541 1H7.95488C7.72993 1 7.54097 1.162 7.51398 1.378L7.17205 3.763C6.62317 3.988 6.11928 4.294 5.65138 4.645L3.41087 3.745C3.20392 3.664 2.96997 3.745 2.86199 3.943L1.06238 7.057C0.94541 7.255 0.999399 7.498 1.17036 7.633L3.06895 9.118C3.03295 9.406 3.00596 9.703 3.00596 10C3.00596 10.297 3.03295 10.594 3.06895 10.882L1.17036 12.367C0.999399 12.502 0.954408 12.745 1.06238 12.943L2.86199 16.057C2.96997 16.255 3.21292 16.327 3.41087 16.255L5.65138 15.355C6.11928 15.715 6.62317 16.012 7.17205 16.237L7.51398 18.622C7.54097 18.838 7.72993 19 7.95488 19H11.5541C11.779 19 11.968 18.838 11.995 18.622L12.3369 16.237C12.8858 16.012 13.3897 15.706 13.8576 15.355L16.0981 16.255C16.3051 16.336 16.539 16.255 16.647 16.057L18.4466 12.943C18.5546 12.745 18.5096 12.502 18.3386 12.367L16.44 10.882ZM9.75449 13.15C8.01787 13.15 6.60517 11.737 6.60517 10C6.60517 8.263 8.01787 6.85 9.75449 6.85C11.4911 6.85 12.9038 8.263 12.9038 10C12.9038 11.737 11.4911 13.15 9.75449 13.15Z" fill="currentColor" />
+                  </svg>
+                  <span>Settings</span>
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!--@endsnippet-->
+      </div>
+    </div>
+  </body>
+</html>
