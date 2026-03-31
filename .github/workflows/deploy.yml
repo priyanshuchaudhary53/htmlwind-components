@@ -1,0 +1,22 @@
+name: Deploy to htmlwind.com
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Pull submodule update on server
+        uses: appleboy/ssh-action@v1
+        with:
+          host:     ${{ secrets.SERVER_HOST }}
+          port:     ${{ secrets.SERVER_PORT }}
+          username: ${{ secrets.SERVER_USER }}
+          key:      ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/htmlwind
+            git submodule update --remote storage/app/components/plain
+            echo "Components updated at $(date)"
