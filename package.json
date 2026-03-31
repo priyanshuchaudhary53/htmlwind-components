@@ -1,0 +1,18 @@
+{
+  "name": "htmlwind-components",
+  "version": "1.0.0",
+  "description": "Free, open-source Tailwind CSS UI components by Htmlwind",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tailwindcss -i ./src/app.css -o ./_dev/app.css --minify",
+    "watch": "tailwindcss -i ./src/app.css -o ./_dev/app.css --watch",
+    "serve": "node ./_dev/server.mjs",
+    "dev": "concurrently \"npm run watch\" \"npm run serve\""
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.0",
+    "concurrently": "^8.2.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Htmlwind — Component Preview</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { display: flex; height: 100vh; font-family: system-ui, sans-serif; background: #f9fafb; }
+    aside {
+      width: 240px; min-width: 240px; background: #fff; border-right: 1px solid #e5e7eb;
+      overflow-y: auto; display: flex; flex-direction: column;
+    }
+    .sidebar-header {
+      padding: 16px; border-bottom: 1px solid #e5e7eb;
+      font-weight: 700; font-size: 15px; color: #111827;
+    }
+    .sidebar-header span { color: #6366f1; }
+    .category-label {
+      padding: 12px 16px 4px; font-size: 11px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.05em; color: #9ca3af;
+    }
+    button.component-btn {
+      display: block; width: 100%; text-align: left;
+      padding: 6px 16px; font-size: 13px; color: #374151;
+      background: none; border: none; cursor: pointer; border-radius: 0;
+    }
+    button.component-btn:hover { background: #f3f4f6; color: #111827; }
+    button.component-btn.active { background: #eef2ff; color: #4f46e5; font-weight: 500; }
+    main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+    .toolbar {
+      padding: 10px 16px; background: #fff; border-bottom: 1px solid #e5e7eb;
+      display: flex; align-items: center; gap: 12px; font-size: 13px; color: #6b7280;
+    }
+    .toolbar code {
+      font-size: 12px; background: #f3f4f6; padding: 2px 8px; border-radius: 4px;
+      color: #374151; font-family: monospace;
+    }
+    .toolbar a {
+      margin-left: auto; font-size: 12px; color: #6366f1; text-decoration: none;
+    }
+    .toolbar a:hover { text-decoration: underline; }
+    iframe { flex: 1; border: none; background: #fff; }
+    .empty-state {
+      flex: 1; display: flex; flex-direction: column; align-items: center;
+      justify-content: center; color: #9ca3af; gap: 8px;
+    }
+    .empty-state p { font-size: 14px; }
+  </style>
+</head>
+<body>
+  <aside>
+    <div class="sidebar-header">Html<span>wind</span></div>
+    <div id="nav"></div>
+  </aside>
+  <main>
+    <div class="toolbar" id="toolbar" style="display:none">
+      Viewing: <code id="current-path"></code>
+      <a id="open-new-tab" href="#" target="_blank">Open in new tab ↗</a>
+    </div>
+    <div class="empty-state" id="empty-state">
+      <p>← Select a component from the sidebar</p>
+    </div>
+    <iframe id="preview" style="display:none"></iframe>
+  </main>
+
+  <script>
+    async function loadCatalog() {
+      try {
+        const res = await fetch('/catalog.json')
+        if (!res.ok) throw new Error()
+        return await res.json()
+      } catch {
+        document.getElementById('nav').innerHTML =
+          '<p style="padding:16px;font-size:13px;color:#9ca3af">Run <code>node scripts/generate-catalog.mjs</code> to build the component list, then restart the server.</p>'
+        return null
+      }
+    }
+
+    let activeBtn = null
+
+    function loadComponent(category, file, btn) {
+      const filePath = `/${category}/${file}`
+      document.getElementById('preview').src = filePath
+      document.getElementById('preview').style.display = 'block'
+      document.getElementById('empty-state').style.display = 'none'
+      document.getElementById('toolbar').style.display = 'flex'
+      document.getElementById('current-path').textContent = filePath
+      document.getElementById('open-new-tab').href = filePath
+      if (activeBtn) activeBtn.classList.remove('active')
+      btn.classList.add('active')
+      activeBtn = btn
+    }
+
+    loadCatalog().then(catalog => {
+      if (!catalog) return
+      const nav = document.getElementById('nav')
+      for (const [category, files] of Object.entries(catalog)) {
+        const label = document.createElement('div')
+        label.className = 'category-label'
+        label.textContent = category.replace(/-/g, ' ')
+        nav.appendChild(label)
+        for (const file of files) {
+          const btn = document.createElement('button')
+          btn.className = 'component-btn'
+          btn.textContent = file.replace('.html', '').replace(/-/g, ' ')
+          btn.onclick = () => loadComponent(category, file, btn)
+          nav.appendChild(btn)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
